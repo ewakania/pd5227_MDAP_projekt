@@ -1,5 +1,6 @@
 .snakemake/
 .nextflow/
+.nextflow.log*
 *.conda
 *.env
 work/
