@@ -1,0 +1,171 @@
+SAMPLES = ["SRR23609083", "SRR23609077", "SRR23609079", "SRR23609081", "SRR23609082", "SRR23609078", 
+"SRR23609080", "SRR23609084", "SRR23609085", "SRR23609086"]
+READS = ["1", "2"]
+
+rule all:
+    input:
+        expand("data/{sample}_{read}.fastq.gz", sample=SAMPLES, read=READS),
+        "data/reference/ref-SARS-CoV-2_Wuhan-Hu-1.fna",
+        #expand("output/fastqc/{sample}_{read}_trimmed_fastqc.zip",sample=SAMPLES, read=READS),
+        #expand("output/fastqc/{sample}_{read}_trimmed_fastqc.html",sample=SAMPLES, read=READS),
+        #expand("output/trimming/{sample}_{read}_trimmed.fastq.gz", sample=SAMPLES, read=READS),
+        "output/multiqc/multiqc_report.html",
+        "results/all.vcf",
+        "results/vcf_stats.txt",
+        "output/genome_coverage.txt"
+
+
+
+rule download_reads:
+    output:
+        r1="data/{sample}_1.fastq.gz",
+        r2="data/{sample}_2.fastq.gz"
+    conda:
+        "envs/sra.yaml"
+    shell:
+        """
+        fasterq-dump {wildcards.sample} -O data
+        gzip -c data/{wildcards.sample}_1.fastq > {output.r1}
+        gzip -c data/{wildcards.sample}_2.fastq > {output.r2}
+        rm -f data/{wildcards.sample}_1.fastq data/{wildcards.sample}_2.fastq
+        """
+
+#NCBI Datasets command-line tools (CLI)
+rule download_reference:
+    output:
+        "data/reference/ref-SARS-CoV-2_Wuhan-Hu-1.fna"
+    conda:
+        "envs/ncbi.yaml"
+    shell:
+        """
+        curl -L "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&id=NC_045512.2&rettype=fasta&retmode=text" \
+            -o {output}
+        """
+
+        #"""
+        #datasets download virus genome accession NC_045512.2 --filename {output}
+        #"""
+
+rule trimming:
+    output:
+        o1="output/trimming/{sample}_1_trimmed.fastq.gz",
+        o2="output/trimming/{sample}_2_trimmed.fastq.gz"
+    input:
+        r1="data/{sample}_1.fastq.gz",
+        r2="data/{sample}_2.fastq.gz"
+    conda:
+        "envs/trimmomatic.yaml"
+    shell:
+        """
+        trimmomatic PE \
+        {input.r1} {input.r2} \
+        {output.o1} /dev/null \
+        {output.o2} /dev/null \
+        ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 \
+        LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+        """
+
+rule fastqc:
+    input:
+        "output/trimming/{sample}_{read}_trimmed.fastq.gz"
+    output:
+        zip="output/fastqc/{sample}_{read}_trimmed_fastqc.zip",
+        html="output/fastqc/{sample}_{read}_trimmed_fastqc.html"
+    shell:
+        """
+        fastqc -t 4 \
+        -o output/fastqc\
+        {input}
+        """
+
+rule multiqc:
+    input:
+        expand("output/fastqc/{sample}_{read}_trimmed_fastqc.zip", sample=SAMPLES, read=READS)
+    output:
+        "output/multiqc/multiqc_report.html"
+    conda:
+        "envs/multiqc.yaml"
+    shell:
+        """
+        multiqc output \
+        -o output/multiqc \
+        --filename multiqc_report.html \
+        """
+    
+rule index_genome:
+    input:
+        "data/reference/ref-SARS-CoV-2_Wuhan-Hu-1.fna"
+    output:
+        idx=multiext("{input}", ".amb", ".ann", ".bwt", ".pac", ".sa")
+    conda:
+        "envs/bwt.yaml"
+    shell:
+        """
+        bwa index {input}
+        """
+rule mapping:
+    input:
+        ref="data/reference/ref-SARS-CoV-2_Wuhan-Hu-1.fna",
+        idx="data/reference/ref-SARS-CoV-2_Wuhan-Hu-1.fna.bwt",
+        r1="output/trimming/{sample}_1_trimmed.fastq.gz",
+        r2="output/trimming/{sample}_2_trimmed.fastq.gz"
+    output:
+        "output/mapped_reads/{sample}.bam"
+    conda:
+        "envs/bwt.yaml"
+    shell:
+        """
+        bwa mem {input.ref} {input.r1} {input.r2} | samtools view -b - > {output}
+        """
+    #b - bam format
+
+rule samtools_sort:
+    input:
+        "output/mapped_reads/{sample}.bam"
+    output:
+        "output/sorted_reads/{sample}_sorted.bam"
+    conda:
+        "envs/bwt.yaml"
+    shell:
+        """
+        samtools sort -O bam -o {output} {input}
+        """
+
+rule samtools_index:
+    input:
+        "output/sorted_reads/{sample}_sorted.bam"
+    output:
+        "output/sorted_reads/{sample}_sorted.bam.bai"
+    conda:
+        "envs/bwt.yaml"
+    shell:
+        "samtools index {input}"
+
+rule calculate_coverage:
+    input:
+        expand("output/sorted_reads/{sample}_sorted.bam", sample=SAMPLES)
+    output:
+        "output/genome_coverage.txt"
+    conda: 
+        "envs/bwt.yaml"
+    shell:
+        """
+        samtools coverage {input} > {output}
+        """
+rule variants_identification:
+    input:
+        ref="data/reference/ref-SARS-CoV-2_Wuhan-Hu-1.fna",
+        bam=expand("output/sorted_reads/{sample}_sorted.bam", sample=SAMPLES)
+    output:
+        results="results/all.vcf",
+        stats="results/vcf_stats.txt"
+    conda:
+        "envs/bcf.yaml"
+    shell:
+        """
+        bcftools mpileup -f {input.ref} {input.bam} | bcftools call -mv - > {output.results}
+        bcftools stats {output.results} > {output.stats}
+        """
+
+
+       

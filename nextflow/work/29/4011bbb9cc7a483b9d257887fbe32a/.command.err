@@ -1,0 +1,8 @@
+
+/// MultiQC 🔍 v1.35
+
+       file_search | Search path: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/29/4011bbb9cc7a483b9d257887fbe32a
+            fastqc | Found 20 reports
+     write_results | Data        : multiqc_data
+     write_results | Report      : multiqc_report.html
+           multiqc | MultiQC complete

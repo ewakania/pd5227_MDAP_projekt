@@ -1,0 +1,58 @@
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+[bwa_index] Pack FASTA... 0.00 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 0.01 seconds elapse.
+[bwa_index] Update BWT... 0.00 sec
+[bwa_index] Pack forward-only FASTA... 0.00 sec
+[bwa_index] Construct SA from BWT and Occ... 0.00 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa index ref-SARS-CoV-2_Wuhan-Hu-1.fna
+[main] Real time: 0.200 sec; CPU: 0.052 sec
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 66672 sequences (10000150 bp)...
+[M::process] read 66670 sequences (10000157 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5, 33278, 0, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (300, 300, 300)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (300, 300)
+[M::mem_pestat] mean and std.dev: (300.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (300, 300)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 66672 reads in 8.409 CPU sec, 13.582 real sec
+[M::process] read 66674 sequences (10000295 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 33271, 0, 4)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (300, 300, 300)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (300, 300)
+[M::mem_pestat] mean and std.dev: (300.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (300, 300)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 66670 reads in 9.127 CPU sec, 14.678 real sec
+[M::process] read 60364 sequences (9054091 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4, 33290, 0, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (300, 300, 300)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (300, 300)
+[M::mem_pestat] mean and std.dev: (300.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (300, 300)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 66674 reads in 8.028 CPU sec, 10.000 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 30133, 1, 2)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (300, 300, 300)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (300, 300)
+[M::mem_pestat] mean and std.dev: (300.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (300, 300)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 60364 reads in 7.967 CPU sec, 11.866 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: bwa mem ref-SARS-CoV-2_Wuhan-Hu-1.fna SRR23609077_trimmed_R1.fastq.gz SRR23609077_trimmed_R2.fastq.gz
+[main] Real time: 51.595 sec; CPU: 33.808 sec

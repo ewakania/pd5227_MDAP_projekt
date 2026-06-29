@@ -1,0 +1,636 @@
+Juni-29 15:20:21.437 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nextflow.nf -with-dag dag.html -with-report report.html -with-timeline timeline.html -with-trace trace.txt
+Juni-29 15:20:21.582 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.2
+Juni-29 15:20:21.598 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/ewa/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.0,nf-k8s@1.0.0,nf-tower@1.11.2,nf-wave@1.12.1
+Juni-29 15:20:21.624 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Juni-29 15:20:21.624 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Juni-29 15:20:21.626 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Juni-29 15:20:21.636 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Juni-29 15:20:21.646 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/nextflow.config
+Juni-29 15:20:21.648 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/nextflow.config
+Juni-29 15:20:21.665 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/ewa/.nextflow/secrets/store.json
+Juni-29 15:20:21.667 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@44c5a16f] - activable => nextflow.secret.LocalSecretsProvider@44c5a16f
+Juni-29 15:20:21.669 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Juni-29 15:20:21.870 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Juni-29 15:20:21.879 [main] DEBUG nextflow.cli.CmdRun - Launching `nextflow.nf` [kickass_wescoff] DSL2 - revision: 64b1872718
+Juni-29 15:20:21.880 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Juni-29 15:20:21.880 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Juni-29 15:20:21.915 [main] DEBUG nextflow.Session - Session UUID: 65e26bd9-fd1d-4d33-bd18-76812f241465
+Juni-29 15:20:21.915 [main] DEBUG nextflow.Session - Run name: kickass_wescoff
+Juni-29 15:20:21.915 [main] DEBUG nextflow.Session - Executor pool size: 8
+Juni-29 15:20:21.920 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Juni-29 15:20:21.923 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Juni-29 15:20:21.944 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.2 build 5947
+  Created: 13-05-2025 21:58 UTC (23:58 MESZ)
+  System: Mac OS X 14.4.1
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 23.0.2+7
+  Encoding: UTF-8 (UTF-8)
+  Process: 22855@Air-von-Ewa [192.168.0.73]
+  CPUs: 8 - Mem: 16 GB (70.1 MB) - Swap: 7 GB (1.1 GB)
+Juni-29 15:20:21.951 [main] DEBUG nextflow.Session - Work-dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work [Mac OS X]
+Juni-29 15:20:21.951 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/bin
+Juni-29 15:20:21.957 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Juni-29 15:20:21.961 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Juni-29 15:20:21.972 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Juni-29 15:20:21.982 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Juni-29 15:20:21.987 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Juni-29 15:20:22.018 [main] DEBUG nextflow.Session - Session start
+Juni-29 15:20:22.020 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/trace.txt
+Juni-29 15:20:22.021 [main] DEBUG nextflow.Session - Trace file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/trace.txt -- enable the 'trace.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Trace file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/trace.txt -- enable the 'trace.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:67)
+	at nextflow.trace.TraceFileObserver.onFlowCreate(TraceFileObserver.groovy:206)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Caused by: java.nio.file.FileAlreadyExistsException: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/trace.txt
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:262)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.newBufferedWriter(Files.java:3012)
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:64)
+	... 9 common frames omitted
+Juni-29 15:20:22.022 [main] DEBUG nextflow.Session - Report file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Report file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.ReportObserver.onFlowCreate(ReportObserver.groovy:133)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:22.023 [main] DEBUG nextflow.Session - Timeline file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/timeline.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Timeline file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/timeline.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TimelineObserver.onFlowCreate(TimelineObserver.groovy:76)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:22.023 [main] DEBUG nextflow.Session - DAG file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/dag.html -- enable `dag.overwrite` in your config file to overwrite existing DAG files
+nextflow.exception.AbortOperationException: DAG file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/dag.html -- enable `dag.overwrite` in your config file to overwrite existing DAG files
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.trace.GraphObserver.onFlowCreate(GraphObserver.groovy:77)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:22.408 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Juni-29 15:20:22.488 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.489 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.494 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Juni-29 15:20:22.500 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=16 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Juni-29 15:20:22.502 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Juni-29 15:20:22.512 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'INDEX_GENOME': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.545 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.545 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.545 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TRIMMOMATIC': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.548 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.548 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.548 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.553 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.553 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.553 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.561 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.562 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.562 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MAPPING': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.564 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.564 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.564 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SAMTOOLS_SORT': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.566 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.566 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.566 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SAMTOOLS_INDEX': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.568 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.569 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.569 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'CALCULATE_COVERAGE': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.570 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.570 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.571 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'INDEX_FASTA': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.573 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.573 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.573 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'VARIANTS_IDENTIFICATION': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.573 [main] WARN  nextflow.processor.TaskProcessor - Input `tuple` must define at least two elements -- Check process `VARIANTS_IDENTIFICATION`
+Juni-29 15:20:22.578 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:20:22.578 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:20:22.578 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MERGE_VCF': maxForks=0; fair=false; array=0
+Juni-29 15:20:22.579 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC, SAMTOOLS_SORT, VARIANTS_IDENTIFICATION, MERGE_VCF, INDEX_FASTA, MULTIQC, MAPPING, CALCULATE_COVERAGE, SAMTOOLS_INDEX, INDEX_GENOME, TRIMMOMATIC
+Juni-29 15:20:22.581 [main] DEBUG nextflow.Session - Igniting dataflow network (14)
+Juni-29 15:20:22.583 [ForkJoinPool.commonPool-worker-1] WARN  nextflow.datasource.SraExplorer - Define the NCBI_API_KEY env variable to use NCBI search service -- Read more https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/
+Juni-29 15:20:22.583 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > INDEX_GENOME
+Juni-29 15:20:22.583 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TRIMMOMATIC
+Juni-29 15:20:22.584 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+Juni-29 15:20:22.584 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+Juni-29 15:20:22.584 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609083
+Juni-29 15:20:22.593 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MAPPING
+Juni-29 15:20:22.593 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_SORT
+Juni-29 15:20:22.593 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_INDEX
+Juni-29 15:20:22.593 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > CALCULATE_COVERAGE
+Juni-29 15:20:22.593 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > INDEX_FASTA
+Juni-29 15:20:22.593 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > VARIANTS_IDENTIFICATION
+Juni-29 15:20:22.593 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MERGE_VCF
+Juni-29 15:20:22.593 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_8a6a717dc5e380a7: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/nextflow.nf
+Juni-29 15:20:22.593 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Juni-29 15:20:22.593 [main] DEBUG nextflow.Session - Session await
+Juni-29 15:20:22.684 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:22.685 [Task submitter] INFO  nextflow.Session - [63/ab4d92] Submitted process > INDEX_GENOME
+Juni-29 15:20:22.700 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:22.700 [Task submitter] INFO  nextflow.Session - [36/9d1dc1] Submitted process > INDEX_FASTA
+Juni-29 15:20:23.037 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a427117052bb4dfb90fe4e5&retstart=0&retmax=500
+Juni-29 15:20:23.206 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609077
+Juni-29 15:20:23.222 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/083/SRR23609083/SRR23609083_1.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/f2/4919fdd463e04eba4600d800176000/SRR23609083_1.fastq.gz
+Juni-29 15:20:23.223 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/083/SRR23609083/SRR23609083_2.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/f7/700741980191bd2fe9e0e59fbd1fea/SRR23609083_2.fastq.gz
+Juni-29 15:20:23.359 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a427117cae4fa17860d3cd2&retstart=0&retmax=500
+Juni-29 15:20:23.884 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - Retryable response error - attempt: 1; reason: Server returned HTTP response code: 429 for URL: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a427117cae4fa17860d3cd2&retstart=0&retmax=500
+Juni-29 15:20:23.895 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: INDEX_FASTA; status: COMPLETED; exit: 0; error: -; workDir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/36/9d1dc1d3f8e02daa8c1b380243f395]
+Juni-29 15:20:23.896 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Juni-29 15:20:23.914 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Juni-29 15:20:23.923 [TaskFinalizer-1] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.finalizeTask(TaskPollingMonitor.groovy:699)
+	at nextflow.processor.TaskPollingMonitor.safeFinalizeTask(TaskPollingMonitor.groovy:686)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_checkTaskStatus_lambda8.doCall(TaskPollingMonitor.groovy:676)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Juni-29 15:20:23.965 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: INDEX_GENOME; status: COMPLETED; exit: 0; error: -; workDir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/63/ab4d92cf045e5705d116f4fceeb16e]
+Juni-29 15:20:23.976 [TaskFinalizer-2] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.finalizeTask(TaskPollingMonitor.groovy:699)
+	at nextflow.processor.TaskPollingMonitor.safeFinalizeTask(TaskPollingMonitor.groovy:686)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_checkTaskStatus_lambda8.doCall(TaskPollingMonitor.groovy:676)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Juni-29 15:20:24.286 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609079
+Juni-29 15:20:24.289 [FileTransfer-3] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/077/SRR23609077/SRR23609077_1.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/58/0938131cafe8dd75b7e0f9816fead1/SRR23609077_1.fastq.gz
+Juni-29 15:20:24.290 [FileTransfer-4] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/077/SRR23609077/SRR23609077_2.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/0f/4041175ec4ce4c48c731cdf12e4cb4/SRR23609077_2.fastq.gz
+Juni-29 15:20:24.480 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a4271180295540b600bcd58&retstart=0&retmax=500
+Juni-29 15:20:24.640 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609081
+Juni-29 15:20:24.645 [FileTransfer-5] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/079/SRR23609079/SRR23609079_1.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/5e/abaf5ee4aa0fafce13453756317346/SRR23609079_1.fastq.gz
+Juni-29 15:20:24.646 [FileTransfer-6] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/079/SRR23609079/SRR23609079_2.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/db/64893c4c67a19c81c4d6a0a754b513/SRR23609079_2.fastq.gz
+Juni-29 15:20:25.219 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - Retryable response error - attempt: 1; reason: Server returned HTTP response code: 429 for URL: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609081
+Juni-29 15:20:25.227 [Actor Thread 8] INFO  nextflow.file.FilePorter - Staging foreign file: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/083/SRR23609083/SRR23609083_1.fastq.gz
+Juni-29 15:20:25.479 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:25.479 [Task submitter] INFO  nextflow.Session - [80/ef8e4b] Submitted process > TRIMMOMATIC (1)
+Juni-29 15:20:25.507 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a427119d8d126a7510421e7&retstart=0&retmax=500
+Juni-29 15:20:25.661 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609082
+Juni-29 15:20:25.663 [FileTransfer-7] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/081/SRR23609081/SRR23609081_1.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/22/833706e73265ac56f38b6a4f8d10c9/SRR23609081_1.fastq.gz
+Juni-29 15:20:25.664 [FileTransfer-8] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/081/SRR23609081/SRR23609081_2.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/bc/c9e24b6c0039f2d1d1a15951611a3e/SRR23609081_2.fastq.gz
+Juni-29 15:20:25.810 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a427119fe7effa058068dfc&retstart=0&retmax=500
+Juni-29 15:20:26.430 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:26.431 [Task submitter] INFO  nextflow.Session - [42/490648] Submitted process > TRIMMOMATIC (3)
+Juni-29 15:20:26.582 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - Retryable response error - attempt: 1; reason: Server returned HTTP response code: 429 for URL: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a427119fe7effa058068dfc&retstart=0&retmax=500
+Juni-29 15:20:27.157 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609078
+Juni-29 15:20:27.162 [FileTransfer-9] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/082/SRR23609082/SRR23609082_1.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/07/2c29e0f30c20f1d4106f1d4d034793/SRR23609082_1.fastq.gz
+Juni-29 15:20:27.162 [FileTransfer-10] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/082/SRR23609082/SRR23609082_2.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/56/93c976caca4a084efb6616714ffdfe/SRR23609082_2.fastq.gz
+Juni-29 15:20:27.325 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a42711b41c7ec62680a7421&retstart=0&retmax=500
+Juni-29 15:20:27.438 [Actor Thread 7] INFO  nextflow.file.FilePorter - Staging foreign file: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/077/SRR23609077/SRR23609077_2.fastq.gz
+Juni-29 15:20:27.471 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609080
+Juni-29 15:20:27.475 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/078/SRR23609078/SRR23609078_1.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/30/219dc56263869b4b2a1764ed647092/SRR23609078_1.fastq.gz
+Juni-29 15:20:27.475 [FileTransfer-3] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/078/SRR23609078/SRR23609078_2.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/2c/41a21fc50181870cc586d151028844/SRR23609078_2.fastq.gz
+Juni-29 15:20:27.587 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:27.587 [Task submitter] INFO  nextflow.Session - [98/733ca3] Submitted process > TRIMMOMATIC (4)
+Juni-29 15:20:28.030 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:28.031 [Task submitter] INFO  nextflow.Session - [de/93bda8] Submitted process > TRIMMOMATIC (2)
+Juni-29 15:20:28.126 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - Retryable response error - attempt: 1; reason: Server returned HTTP response code: 429 for URL: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609080
+Juni-29 15:20:28.370 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a42711ce44261c17605675e&retstart=0&retmax=500
+Juni-29 15:20:28.533 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609084
+Juni-29 15:20:28.538 [FileTransfer-5] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/080/SRR23609080/SRR23609080_2.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/60/2d9bb52bcdf5a8f2ca42b2fb16d0ca/SRR23609080_2.fastq.gz
+Juni-29 15:20:28.538 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/080/SRR23609080/SRR23609080_1.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/5d/db51ecf2ee4131d1e44d1db5abe524/SRR23609080_1.fastq.gz
+Juni-29 15:20:28.865 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a42711c96371072ca0c0a25&retstart=0&retmax=500
+Juni-29 15:20:29.167 [Actor Thread 6] INFO  nextflow.file.FilePorter - Staging foreign file: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/082/SRR23609082/SRR23609082_1.fastq.gz
+Juni-29 15:20:29.480 [Actor Thread 3] INFO  nextflow.file.FilePorter - Staging foreign file: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/078/SRR23609078/SRR23609078_1.fastq.gz
+Juni-29 15:20:29.579 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - Retryable response error - attempt: 1; reason: Server returned HTTP response code: 429 for URL: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a42711c96371072ca0c0a25&retstart=0&retmax=500
+Juni-29 15:20:29.808 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609085
+Juni-29 15:20:29.813 [FileTransfer-6] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/084/SRR23609084/SRR23609084_1.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/ba/b9604f9259224a99d1cae5a9747a68/SRR23609084_1.fastq.gz
+Juni-29 15:20:29.814 [FileTransfer-8] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/084/SRR23609084/SRR23609084_2.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/b0/afa39e717a7b5ddaa52b919180ed0b/SRR23609084_2.fastq.gz
+Juni-29 15:20:30.116 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:30.116 [Task submitter] INFO  nextflow.Session - [4d/5671e4] Submitted process > TRIMMOMATIC (6)
+Juni-29 15:20:30.267 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:30.268 [Task submitter] INFO  nextflow.Session - [2b/e67030] Submitted process > TRIMMOMATIC (7)
+Juni-29 15:20:30.430 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a42711eb03f0ecc3f0feb48&retstart=0&retmax=500
+Juni-29 15:20:30.578 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA search url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609086
+Juni-29 15:20:30.581 [FileTransfer-7] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/085/SRR23609085/SRR23609085_1.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/58/9152993fc35fbd7db981a7a9f35d56/SRR23609085_1.fastq.gz
+Juni-29 15:20:30.581 [FileTransfer-4] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/085/SRR23609085/SRR23609085_2.fastq.gz to work dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/stage-65e26bd9-fd1d-4d33-bd18-76812f241465/2c/30df201534b38e6bd8f487b0dbbe35/SRR23609085_2.fastq.gz
+Juni-29 15:20:31.039 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:31.039 [Task submitter] INFO  nextflow.Session - [de/bfdd61] Submitted process > TRIMMOMATIC (5)
+Juni-29 15:20:31.214 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - Retryable response error - attempt: 1; reason: Server returned HTTP response code: 429 for URL: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=sra&usehistory=y&retmode=json&term=SRR23609086
+Juni-29 15:20:31.439 [ForkJoinPool.commonPool-worker-1] DEBUG nextflow.datasource.SraExplorer - SRA data request url=https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=sra&retmode=json&query_key=1&WebEnv=MCID_6a42711fe2e5d78c660a25c6&retstart=0&retmax=500
+Juni-29 15:20:31.478 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: TRIMMOMATIC (3); status: COMPLETED; exit: 0; error: -; workDir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/42/4906483be627ffcc2ad6393501bdeb]
+Juni-29 15:20:31.491 [Task submitter] WARN  n.executor.BashWrapperBuilder - Task runtime metrics are not reported when using macOS without a container engine
+Juni-29 15:20:31.490 [TaskFinalizer-3] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.finalizeTask(TaskPollingMonitor.groovy:699)
+	at nextflow.processor.TaskPollingMonitor.safeFinalizeTask(TaskPollingMonitor.groovy:686)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_checkTaskStatus_lambda8.doCall(TaskPollingMonitor.groovy:676)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Juni-29 15:20:31.488 [Actor Thread 3] ERROR nextflow.extension.OperatorImpl - @unknown
+groovy.lang.MissingMethodException: No signature of method: Script_8a6a717dc5e380a7$_runScript_closure12$_closure43$_closure44.call() is applicable for argument types: (LinkedList) values: [[SRR23609079, /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/42/4906483be627ffcc2ad6393501bdeb/SRR23609079_trimmed_R1.fastq.gz, ...]]
+Possible solutions: any(), any(), any(groovy.lang.Closure), each(groovy.lang.Closure), tap(groovy.lang.Closure), any(groovy.lang.Closure)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:272)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:790)
+	at groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)
+	at org.codehaus.groovy.vmplugin.v8.IndyGuardsFiltersAndSignatures.invokeGroovyObjectInvoker(IndyGuardsFiltersAndSignatures.java:151)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.extension.MapOp$_apply_closure1.doCall(MapOp.groovy:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.onMessage(DataflowOperatorActor.java:108)
+	at groovyx.gpars.actor.impl.SDAClosure$1.call(SDAClosure.java:43)
+	at groovyx.gpars.actor.AbstractLoopingActor.runEnhancedWithoutRepliesOnMessages(AbstractLoopingActor.java:293)
+	at groovyx.gpars.actor.AbstractLoopingActor.access$400(AbstractLoopingActor.java:30)
+	at groovyx.gpars.actor.AbstractLoopingActor$1.handleMessage(AbstractLoopingActor.java:93)
+	at groovyx.gpars.util.AsyncMessagingCore.run(AsyncMessagingCore.java:132)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Juni-29 15:20:31.494 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Juni-29 15:20:31.500 [Task submitter] INFO  nextflow.Session - [79/f5f691] Submitted process > FASTQC (1)
+Juni-29 15:20:31.501 [Actor Thread 3] DEBUG nextflow.Session - Session aborted -- Cause: No signature of method: Script_8a6a717dc5e380a7$_runScript_closure12$_closure43$_closure44.call() is applicable for argument types: (LinkedList) values: [[SRR23609079, /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work/42/4906483be627ffcc2ad6393501bdeb/SRR23609079_trimmed_R1.fastq.gz, ...]]
+Possible solutions: any(), any(), any(groovy.lang.Closure), each(groovy.lang.Closure), tap(groovy.lang.Closure), any(groovy.lang.Closure)
+Juni-29 15:20:31.534 [Actor Thread 3] DEBUG nextflow.Session - The following nodes are still active:
+[process] TRIMMOMATIC
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] MULTIQC
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: fastqc_files
+  port 1: (cntrl) -     ; channel: $
+
+[process] MAPPING
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] SAMTOOLS_SORT
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] SAMTOOLS_INDEX
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] CALCULATE_COVERAGE
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: bams
+  port 1: (cntrl) -     ; channel: $
+
+[process] VARIANTS_IDENTIFICATION
+  status=ACTIVE
+  port 0: (value) bound ; channel: -
+  port 1: (queue) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] MERGE_VCF
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: vcf
+  port 1: (value) OPEN  ; channel: index
+  port 2: (cntrl) -     ; channel: $
+
+Juni-29 15:20:31.544 [main] DEBUG nextflow.Session - Session await > all processes finished
+Juni-29 15:20:31.544 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Juni-29 15:20:31.545 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Juni-29 15:20:31.554 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (7)
+Juni-29 15:20:31.571 [main] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.cleanup(TaskPollingMonitor.groovy:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.doCall(TaskPollingMonitor.groovy:318)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.call(TaskPollingMonitor.groovy)
+	at groovy.lang.Closure.run(Closure.java:505)
+	at nextflow.Session.shutdown0(Session.groovy:760)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:31.581 [main] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.cleanup(TaskPollingMonitor.groovy:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.doCall(TaskPollingMonitor.groovy:318)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.call(TaskPollingMonitor.groovy)
+	at groovy.lang.Closure.run(Closure.java:505)
+	at nextflow.Session.shutdown0(Session.groovy:760)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:31.588 [main] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.cleanup(TaskPollingMonitor.groovy:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.doCall(TaskPollingMonitor.groovy:318)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.call(TaskPollingMonitor.groovy)
+	at groovy.lang.Closure.run(Closure.java:505)
+	at nextflow.Session.shutdown0(Session.groovy:760)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:31.607 [main] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.cleanup(TaskPollingMonitor.groovy:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.doCall(TaskPollingMonitor.groovy:318)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.call(TaskPollingMonitor.groovy)
+	at groovy.lang.Closure.run(Closure.java:505)
+	at nextflow.Session.shutdown0(Session.groovy:760)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:31.633 [main] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.cleanup(TaskPollingMonitor.groovy:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.doCall(TaskPollingMonitor.groovy:318)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.call(TaskPollingMonitor.groovy)
+	at groovy.lang.Closure.run(Closure.java:505)
+	at nextflow.Session.shutdown0(Session.groovy:760)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:31.642 [main] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.cleanup(TaskPollingMonitor.groovy:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.doCall(TaskPollingMonitor.groovy:318)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.call(TaskPollingMonitor.groovy)
+	at groovy.lang.Closure.run(Closure.java:505)
+	at nextflow.Session.shutdown0(Session.groovy:760)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:31.647 [main] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.send(Object)" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onProcessComplete(TraceFileObserver.groovy:270)
+	at nextflow.Session$_notifyTaskComplete_lambda34.doCall(Session.groovy:1063)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyTaskComplete(Session.groovy:1063)
+	at nextflow.processor.TaskPollingMonitor.cleanup(TaskPollingMonitor.groovy:736)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1333)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1088)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.doCall(TaskPollingMonitor.groovy:318)
+	at nextflow.processor.TaskPollingMonitor$_start_closure1.call(TaskPollingMonitor.groovy)
+	at groovy.lang.Closure.run(Closure.java:505)
+	at nextflow.Session.shutdown0(Session.groovy:760)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:31.649 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=3; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=1; submittedCount=1; runningCount=-1; retriesCount=0; abortedCount=7; succeedDuration=4.1s; failedDuration=0ms; cachedDuration=0ms;loadCpus=-1; loadMemory=0; peakRunning=7; peakCpus=7; peakMemory=0; ]
+Juni-29 15:20:31.649 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Juni-29 15:20:31.649 [main] DEBUG nextflow.Session - Cannot invoke "groovyx.gpars.agent.Agent.await()" because "this.writer" is null
+java.lang.NullPointerException: Cannot invoke "groovyx.gpars.agent.Agent.await()" because "this.writer" is null
+	at nextflow.trace.TraceFileObserver.onFlowComplete(TraceFileObserver.groovy:221)
+	at nextflow.Session$_notifyFlowComplete_lambda45.doCall(Session.groovy:1107)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowComplete(Session.groovy:1107)
+	at nextflow.Session.shutdown0(Session.groovy:768)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:20:31.649 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Juni-29 15:20:32.586 [Actor Thread 8] INFO  nextflow.file.FilePorter - Staging foreign file: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR236/085/SRR23609085/SRR23609085_1.fastq.gz
+Juni-29 15:20:32.882 [main] WARN  nextflow.trace.ReportObserver - Failed to render execution report -- see the log file for details
+nextflow.exception.AbortOperationException: Report file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:67)
+	at nextflow.trace.ReportObserver.renderHtml(ReportObserver.groovy:284)
+	at nextflow.trace.ReportObserver.onFlowComplete(ReportObserver.groovy:143)
+	at nextflow.Session$_notifyFlowComplete_lambda45.doCall(Session.groovy:1107)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowComplete(Session.groovy:1107)
+	at nextflow.Session.shutdown0(Session.groovy:768)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Caused by: java.nio.file.FileAlreadyExistsException: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/report.html
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:262)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.newBufferedWriter(Files.java:3012)
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:64)
+	... 12 common frames omitted
+Juni-29 15:20:32.883 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Juni-29 15:20:32.988 [main] WARN  nextflow.trace.TimelineObserver - Failed to render execution timeline -- see the log file for details
+nextflow.exception.AbortOperationException: Timeline file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/timeline.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:67)
+	at nextflow.trace.TimelineObserver.renderHtml(TimelineObserver.groovy:178)
+	at nextflow.trace.TimelineObserver.onFlowComplete(TimelineObserver.groovy:87)
+	at nextflow.Session$_notifyFlowComplete_lambda45.doCall(Session.groovy:1107)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowComplete(Session.groovy:1107)
+	at nextflow.Session.shutdown0(Session.groovy:768)
+	at nextflow.Session.destroy(Session.groovy:713)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:263)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:147)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Caused by: java.nio.file.FileAlreadyExistsException: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/timeline.html
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:262)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.newBufferedWriter(Files.java:3012)
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:64)
+	... 12 common frames omitted
+Juni-29 15:20:33.029 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Juni-29 15:20:33.058 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

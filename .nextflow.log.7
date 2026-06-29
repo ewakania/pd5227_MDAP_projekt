@@ -1,0 +1,153 @@
+Juni-29 15:25:12.941 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nextflow.nf -with-dag dag.html -with-report report.html -with-timeline timeline.html -with-trace trace.txt
+Juni-29 15:25:13.086 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.2
+Juni-29 15:25:13.105 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/ewa/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.0,nf-k8s@1.0.0,nf-tower@1.11.2,nf-wave@1.12.1
+Juni-29 15:25:13.128 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Juni-29 15:25:13.129 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Juni-29 15:25:13.130 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Juni-29 15:25:13.141 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Juni-29 15:25:13.151 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/nextflow.config
+Juni-29 15:25:13.152 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/nextflow.config
+Juni-29 15:25:13.170 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/ewa/.nextflow/secrets/store.json
+Juni-29 15:25:13.171 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@44c5a16f] - activable => nextflow.secret.LocalSecretsProvider@44c5a16f
+Juni-29 15:25:13.173 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Juni-29 15:25:13.375 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Juni-29 15:25:13.385 [main] DEBUG nextflow.cli.CmdRun - Launching `nextflow.nf` [naughty_plateau] DSL2 - revision: 5733da8172
+Juni-29 15:25:13.386 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Juni-29 15:25:13.386 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Juni-29 15:25:13.417 [main] DEBUG nextflow.Session - Session UUID: 98531e18-633a-4882-955e-6075310547a1
+Juni-29 15:25:13.417 [main] DEBUG nextflow.Session - Run name: naughty_plateau
+Juni-29 15:25:13.417 [main] DEBUG nextflow.Session - Executor pool size: 8
+Juni-29 15:25:13.422 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Juni-29 15:25:13.424 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=24; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Juni-29 15:25:13.450 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.2 build 5947
+  Created: 13-05-2025 21:58 UTC (23:58 MESZ)
+  System: Mac OS X 14.4.1
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 23.0.2+7
+  Encoding: UTF-8 (UTF-8)
+  Process: 23186@Air-von-Ewa [192.168.0.73]
+  CPUs: 8 - Mem: 16 GB (62 MB) - Swap: 7 GB (689.4 MB)
+Juni-29 15:25:13.458 [main] DEBUG nextflow.Session - Work-dir: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/work [Mac OS X]
+Juni-29 15:25:13.458 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/bin
+Juni-29 15:25:13.464 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Juni-29 15:25:13.468 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Juni-29 15:25:13.478 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Juni-29 15:25:13.489 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Juni-29 15:25:13.494 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 9; maxThreads: 1000
+Juni-29 15:25:13.526 [main] DEBUG nextflow.Session - Session start
+Juni-29 15:25:13.528 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/trace.txt
+Juni-29 15:25:13.529 [main] DEBUG nextflow.Session - Trace file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/trace.txt -- enable the 'trace.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Trace file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/trace.txt -- enable the 'trace.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:67)
+	at nextflow.trace.TraceFileObserver.onFlowCreate(TraceFileObserver.groovy:206)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Caused by: java.nio.file.FileAlreadyExistsException: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/trace.txt
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:262)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.newBufferedWriter(Files.java:3012)
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:64)
+	... 9 common frames omitted
+Juni-29 15:25:13.530 [main] DEBUG nextflow.Session - Report file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Report file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.ReportObserver.onFlowCreate(ReportObserver.groovy:133)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:25:13.530 [main] DEBUG nextflow.Session - Timeline file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/timeline.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Timeline file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/timeline.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TimelineObserver.onFlowCreate(TimelineObserver.groovy:76)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:25:13.531 [main] DEBUG nextflow.Session - DAG file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/dag.html -- enable `dag.overwrite` in your config file to overwrite existing DAG files
+nextflow.exception.AbortOperationException: DAG file already exists: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/dag.html -- enable `dag.overwrite` in your config file to overwrite existing DAG files
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.trace.GraphObserver.onFlowCreate(GraphObserver.groovy:77)
+	at nextflow.Session$_notifyFlowCreate_lambda40.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1138)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1093)
+	at nextflow.Session.start(Session.groovy:585)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:133)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)
+Juni-29 15:25:13.873 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Juni-29 15:25:13.959 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:25:13.959 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:25:13.962 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Juni-29 15:25:13.965 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=16 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Juni-29 15:25:13.966 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Juni-29 15:25:13.976 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'INDEX_GENOME': maxForks=0; fair=false; array=0
+Juni-29 15:25:14.001 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:25:14.002 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:25:14.002 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TRIMMOMATIC': maxForks=0; fair=false; array=0
+Juni-29 15:25:14.005 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:25:14.005 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:25:14.005 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+Juni-29 15:25:14.014 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Juni-29 15:25:14.014 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Juni-29 15:25:14.015 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+Juni-29 15:25:14.016 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_a1cffdda8638c34e: /Users/ewa/Desktop/Ewa/STUDIA/2025_Bioinformatyka/pd5227_pipline_automatyzacja/projekt/nextflow.nf
+Juni-29 15:25:14.017 [main] DEBUG nextflow.Session - Session aborted -- Cause: No such property: ref for class: nextflow.script.WorkflowBinding
+Possible solutions: meta, log
+Juni-29 15:25:14.024 [main] DEBUG nextflow.Session - The following nodes are still active:
+  [operator] collect
+
+Juni-29 15:25:14.027 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Juni-29 15:25:14.027 [main] ERROR nextflow.cli.Launcher - @unknown
+groovy.lang.MissingPropertyException: No such property: ref for class: nextflow.script.WorkflowBinding
+Possible solutions: meta, log
+	at groovy.lang.Binding.getVariable(Binding.java:61)
+	at nextflow.script.WorkflowBinding.getVariable(WorkflowBinding.groovy:143)
+	at groovy.lang.Binding.getProperty(Binding.java:117)
+	at nextflow.script.WorkflowBinding.getProperty(WorkflowBinding.groovy:132)
+	at org.codehaus.groovy.runtime.InvokerHelper.getProperty(InvokerHelper.java:167)
+	at groovy.lang.Closure.getPropertyTryThese(Closure.java:325)
+	at groovy.lang.Closure.getPropertyDelegateFirst(Closure.java:315)
+	at groovy.lang.Closure.getProperty(Closure.java:301)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at Script_a1cffdda8638c34e$_runScript_closure12$_closure43.doCall(Script_a1cffdda8638c34e:274)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:280)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1007)
+	at groovy.lang.Closure.call(Closure.java:433)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at nextflow.script.WorkflowDef.run0(WorkflowDef.groovy:205)
+	at nextflow.script.WorkflowDef.run(WorkflowDef.groovy:189)
+	at nextflow.script.BindableDef.invoke_a(BindableDef.groovy:51)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run0(BaseScript.groovy:182)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:193)
+	at nextflow.script.parser.v1.ScriptLoaderV1.runScript(ScriptLoaderV1.groovy:246)
+	at nextflow.script.parser.v1.ScriptLoaderV1.runScript(ScriptLoaderV1.groovy)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:246)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:139)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:379)
+	at nextflow.cli.Launcher.run(Launcher.groovy:513)
+	at nextflow.cli.Launcher.main(Launcher.groovy:673)

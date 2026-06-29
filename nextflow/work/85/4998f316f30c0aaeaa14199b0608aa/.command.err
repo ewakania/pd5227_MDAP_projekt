@@ -1,0 +1,6 @@
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+TrimmomaticPE: Started with arguments:
+ -threads 4 SRR23609078_1.fastq.gz SRR23609078_2.fastq.gz SRR23609078_trimmed_R1.fastq.gz /dev/null SRR23609078_trimmed_R2.fastq.gz /dev/null LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+Quality encoding detected as phred33
+Input Read Pairs: 134258 Both Surviving: 132750 (98.88%) Forward Only Surviving: 1050 (0.78%) Reverse Only Surviving: 368 (0.27%) Dropped: 90 (0.07%)
+TrimmomaticPE: Completed successfully

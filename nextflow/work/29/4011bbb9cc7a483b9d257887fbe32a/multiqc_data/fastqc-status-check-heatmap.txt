@@ -1,0 +1,21 @@
+.	Basic Statistics	Per Base Sequence Quality	Per Sequence Quality Scores	Per Base Sequence Content	Per Sequence GC Content	Per Base N Content	Sequence Length Distribution	Sequence Duplication Levels	Overrepresented Sequences	Adapter Content
+SRR23609077_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	1
+SRR23609077_trimmed_R2	1	1	1	0.25	0.25	1	0.5	0.25	0.25	1
+SRR23609078_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	1
+SRR23609078_trimmed_R2	1	1	1	0.25	0.25	1	0.5	0.25	0.25	1
+SRR23609079_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	1
+SRR23609079_trimmed_R2	1	1	1	0.25	0.25	1	0.5	0.25	0.25	1
+SRR23609080_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	1
+SRR23609080_trimmed_R2	1	1	1	0.25	0.25	1	0.5	0.25	0.25	1
+SRR23609081_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609081_trimmed_R2	1	1	1	0.25	0.5	1	0.5	0.25	0.25	0.25
+SRR23609082_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609082_trimmed_R2	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609083_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609083_trimmed_R2	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609084_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609084_trimmed_R2	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609085_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609085_trimmed_R2	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609086_trimmed_R1	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
+SRR23609086_trimmed_R2	1	1	1	0.25	0.25	1	0.5	0.25	0.25	0.25
