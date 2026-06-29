@@ -1,3 +1,5 @@
 .snakemake/
 .nextflow/
+*.conda
+*.env
 work/
